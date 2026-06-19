@@ -1,0 +1,29 @@
+import json
+import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import LinearSVC
+
+texts = []
+labels = []
+
+with open("intents.json", "r") as file:
+    data = json.load(file)
+
+for intent in data["intents"]:
+    for pattern in intent["patterns"]:
+        texts.append(pattern)
+        labels.append(intent["tag"])
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(texts)
+
+model = LinearSVC()
+model.fit(X, labels)
+
+with open("chatbot_model.pkl", "wb") as file:
+    pickle.dump(model, file)
+
+with open("vectorizer.pkl", "wb") as file:
+    pickle.dump(vectorizer, file)
+
+print("Chatbot model trained successfully!")
