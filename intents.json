@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning"],
+      "responses": ["Hello!", "Hi, how can I help you?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you"],
+      "responses": ["Goodbye!", "See you later!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "thanks a lot"],
+      "responses": ["You're welcome!", "Happy to help!"]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what is your name", "who are you"],
+      "responses": ["I am a hybrid chatbot."]
+    },
+    {
+      "tag": "help",
+      "patterns": ["help me", "what can you do", "support"],
+      "responses": ["I can answer basic questions using rules and ML."]
+    }
+  ]
+}
